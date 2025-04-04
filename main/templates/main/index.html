@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TUIT International Programs</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <!-- University Information Section -->
+    <header>
+        <h1>Welcome to TUIT International Programs</h1>
+        <p>Discover our international study opportunities.</p>
+        <img src="{% static 'main/images/tuit-campus.jpg' %}" alt="TUIT Campus" style="max-width: 100%;">
+    </header>
+
+    <!-- Programs Carousel Section -->
+    <section id="programs">
+        <h2>Our Programs</h2>
+        <div class="carousel">
+            {% for program in programs %}
+            <div class="carousel-item">
+                {% if program.image %}
+                    <img src="{{ program.image.url }}" alt="{{ program.title }}">
+                {% else %}
+                    <img src="{% static 'main/images/default-program.jpg' %}" alt="{{ program.title }}">
+                {% endif %}
+                <h3>{{ program.title }}</h3>
+                <p>{{ program.description }}</p>
+                <a href="{% url 'apply' program.id %}" class="apply-button">Apply</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Include JavaScript for carousel functionality if needed -->
+    <script src="{% static 'main/js/carousel.js' %}"></script>
+</body>
+</html>
