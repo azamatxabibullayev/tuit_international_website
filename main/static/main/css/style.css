@@ -1,0 +1,122 @@
+/* Ensure the page fills the viewport */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Base styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background: linear-gradient(135deg, #003366, #0055aa);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-content h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.header-content p {
+  font-size: 1em;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 80px); /* Adjust if header height changes */
+  overflow: hidden;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  height: 100%;
+}
+
+/* Each Carousel Item */
+.carousel-item {
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+/* Overlay for Program Details */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: left;
+}
+
+.overlay h3 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.overlay p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+/* Apply Button */
+.apply-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4d8ef0;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.apply-button:hover {
+  background-color: #0d2852;
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-nav.left {
+  left: 20px;
+}
+
+.carousel-nav.right {
+  right: 20px;
+}
